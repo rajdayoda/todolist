@@ -1,0 +1,32 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color:#d8d6d6;
+}
+
+.container {
+    width: 400px;
+    height: 600px;
+    margin: 0 auto;
+    background: green;
+}
+
+
+.agregar-tarea {
+    width: 380px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+.agregar-tarea i {
+    font-size: 35px;
+    color:#222222;
+}
+.agregar-tarea input {
+    width: 100%;
+    border-radius: 10px;
+    padding: 5px;
+}
+.seccion-tarea {
+    width: 400px;
+}
