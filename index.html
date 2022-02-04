@@ -4,27 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APP LISTA DE TAREAS</title>
-    <link rel="stylesheet" href="style2.css">
+    <title>APP TO DO LIST</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="agregar-tarea">
-            <i class="fas fa-plus-circle"></i>
-            <input type="text " id="input" placeholder="Agregar una Tarea">
-        </div>
-        <div class="seccion-tarea">
-            <ul id="list">
-                <!-- <li class="item">
-                    <i class="far fa-circle co" job="complete" id="0"></i>
-                    <p class="text line-Through">Drink Coffee</p>
-                    <i class="fas fa-trash de" job="delete" id="0"></i> 
-                </li> -->
-            </ul>
-        </div>   
+    
+<div class="container">
+    <div class="perfil">
+        <div id="fecha"></div>
+        <h1>Hola, Rajesh Daya </h1>
+        <span>Vamos a cumplir tus metas</span>
     </div>
-<!-- <div id="date"></div> -->
-    <script src="script2.js"></script>
+
+    <div class="agregar-tarea">
+        <input type="text" id="input" placeholder="agregar una tarea">
+        <i id="boton-enter"class="fas fa-plus-circle"></i>
+    </div>
+
+    
+
+
+    <div class="seccion-tarea">
+        <h3>Estas son tus Tareas Pendientes </h3>
+        <ul id="lista">
+            <li id="elemento">
+                <i class="far fa-circle co" job="complete" id="0"></i>
+                <p class=""> Hacer la tarea de matematicas </p>
+                <i class="fas fa-trash de" job="delete" id="0"></i> 
+            </li>
+            <li id="elemento">
+                <i class="far fa-circle co" job="complete" id="0"></i>
+                <p class="line-Through"> Lavar la ropa </p>
+                <i class="fas fa-trash de" job="delete" id="0"></i> 
+            </li>
+        </ul>
+    </div>   
+</div>
+<script src="index.js"></script>
 </body>
 </html>

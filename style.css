@@ -1,154 +1,130 @@
-/* ------------ youtube.com/CodeExplained ------------ */
-body{
-    padding: 0;
-    margin: 0;
-    background-color: rgba(0,0,0,0.1);
-    font-family: 'Titillium Web', sans-serif;
+ * {
+     box-sizing: border-box;
+     padding: 0;
+     margin: 0;
+ }
+
+
+ :root {
+     --white:#fafafb;
+     --purple:#9a67ea;
+     --blue-light:#04d4c3;
+ }
+body {
+    background: linear-gradient(to bottom, var(--purple) , var(--blue-light)) no-repeat;
+    height: 100vh;
+    font-family: 'Prompt', sans-serif;
 }
 
-/* ------------ container ------------ */
-.container{
-    padding:10px;
-    width:380px;
-    margin:0 auto;
-    background-color: green;
 
-}
+ .container {
+    width: 400px;
+    height: 600px;
+    margin: 0 auto;
+    /* background-color: rgb(145, 49, 49); */
+    padding: 0 30px;
 
-/* ------------ header ------------ */
-.header{
-    width: 380px;
-    height:200px;
-    background-image: url('img/bg2.jpg');
-    background-size: 100% 200%;
-    background-repeat: no-repeat;
-    border-radius: 15px 15px 0 0;
-    position: relative;
-}
-.clear{
-    width : 30px;
-    height: 30px;
-    position: absolute;
-    right:20px;
-    top: 20px;
-}
-.clear i{
-    font-size: 30px;
-    color: #FFF;
-}
-.clear i:hover{
-    cursor: pointer;
-    text-shadow: 1px 3px 5px #000;
-    transform: rotate(45deg);
-}
-#date{
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    color: #FFF;
-    font-size: 25px;
-    font-family: 'Titillium Web', sans-serif;
-}
+} 
 
-/* ------------ content ------------ */
-.content{
-    width:380px;
-    height: 350px;
-    max-height:350px;
-    background-color: #FFF;
-    overflow: auto;
-}
-.content::-webkit-scrollbar { 
-    display: none; 
-}
-.content ul{
-    padding:0;
-    margin:0;
-}
-.item{
-    width:380px;
-    height: 45px;
-    min-height: 45px;
-    position: relative;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.item i.co{
-    position: absolute;
-    font-size: 25px;
-    padding-left:5px;
-    left:15px;
-    top:10px;
-}
-.item i.co:hover{
-    cursor: pointer;
-}
-.fa-check-circle{
-    color:#6eb200;
-}
-.item p.text{
-    position: absolute;
-    padding:0;
-    margin:0;
-    font-size: 20px;
-    left:50px;
-    top:5px;
-    background-color: #FFF;
-    max-width:285px;
-}
-.line-Through{
-    text-decoration: line-through;
-    color : #ccc;
-}
-.item i.de{
-    position: absolute;
-    font-size: 25px;
-    right:15px;
-    top:10px;
-}
-.item i.de:hover{
-    color:#af0000;
-    cursor: pointer;
-}
-/* ------------ add item ------------ */
-.add-to-do{
-    position: relative;
-    width: 360px;
-    height:40px;
-    background-color: #FFF;
-    padding: 10px;
-    border-top: 1px solid rgba(0,0,0,0.1);
-}
-.add-to-do i{
-    position: absolute;
-    font-size: 40px;
-    color: #4162f6;
-}
 
-.add-to-do input{
-    position: absolute;
-    left: 50px;
-    height: 35px;
-    width: 310px;
-    background-color: transparent;
-    border: none;
-    font-size: 20px;
-    padding-left:10px;
-}
-.add-to-do input::-webkit-input-placeholder {
-    color: #4162f6;
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 20px;
-}
+/*//Perfil ///*/
 
-li {
-    background-color: burlywood;
-    border-radius: 20px;
-}
-
-p.text {
-    background-color: burlywood;
+.perfil h1 {
+    color: var(--white) ;
     
 }
+.perfil span {
+    color: var(--white);
+    letter-spacing: 1px;
+}
+
+#fecha {
+    color: var(--white);
+    padding: 50px 15px 5px 0px;
+}
+
+
+
+
+
+/*////////////AGREGAR TAREA //////////////////*/
+
+.agregar-tarea {
+    background-color: var(--white) ;
+    width: 100%;
+    height: 70px;
+    border-radius: 15px;
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    margin: 40px 0;
+
+}
+
+.agregar-tarea i {
+    font-size: 50px;
+    color: var(--purple) ;
+    
+}
+.agregar-tarea i:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.agregar-tarea input {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--white);
+    padding-left:10px ;
+    
+
+}
+
+/*///seccion de tarea////*/
+
+.seccion-tarea h3 {
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.seccion-tarea li {
+    background: linear-gradient(to bottom, #2a73c2  ,  #2c7b90  ) no-repeat;
+    border-radius:15px ;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 5px 0;
+
+
+}
+
+.line-Through{
+    text-decoration: line-through;
+    color : var(--blue-light);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .seccion-tarea li {
+    display: flex;
+    align-items: center;
+}
+
+.seccion-tarea p {
+    margin: 0 50px;
+} */
