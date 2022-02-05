@@ -32,14 +32,38 @@ function agregarTarea( tarea,id,realizado,eliminado) {
 
     const elemento = `
                         <li id="elemento">
-                        <i class="far ${REALIZADO}" job="complete" id="${id}"></i>
-                        <p class="${LINE}">${tarea}</p>
-                        <i class="fas fa-trash de" job="delete" id="${id}"></i> 
+                        <i class="far ${REALIZADO}" data="realizado" id="${id}"></i>
+                        <p class="text ${LINE}">${tarea}</p>
+                        <i class="fas fa-trash de" data="eliminado" id="${id}"></i> 
                         </li>
                     `
     lista.insertAdjacentHTML("beforeend",elemento)
 
 }
+
+
+// funcion de Tarea Realizada 
+
+function tareaRealizada(element) {
+    element.classList.toggle(check)
+    element.classList.toggle(uncheck)
+    element.parentNode.querySelector('.text').classList.toggle(lineThrough)
+    LIST[element.id].realizado = LIST[element.id].realizado ?false :true //Si
+   // console.log(LIST)
+   // console.log(LIST[element.id])
+   // console.log(LIST[element.id].realizado)
+}
+
+function tareaEliminada(element){
+   // console.log(element.parentNode)
+   // console.log(element.parentNode.parentNode)
+    element.parentNode.parentNode.removeChild(element.parentNode)
+    LIST[element.id].eliminado = true
+    console.log(LIST)
+}
+
+
+
 
 
 // crear un evento para escuchar el enter y para habilitar el boton 
@@ -49,7 +73,7 @@ botonEnter.addEventListener('click', ()=> {
     if(tarea){
         agregarTarea(tarea,id,false,false)
         LIST.push({
-            name : tarea,
+            nombre : tarea,
             id : id,
             realizado : false,
             eliminado : false
@@ -80,7 +104,14 @@ document.addEventListener('keyup', function (event) {
 })
 
 
-document.addEventListener('click',function(event){
+lista.addEventListener('click',function(event){
     const element = event.target 
-    console.log(element)
+    const elementData = element.attributes.data.value
+    
+    if(elementData == 'realizado') {
+        tareaRealizada(element)
+    }
+    else if(elementData == 'eliminado') {
+        tareaEliminada(element)
+    }
 })

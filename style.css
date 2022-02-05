@@ -18,6 +18,7 @@ body {
 
 
  .container {
+    max-width:100%;
     width: 400px;
     height: 600px;
     margin: 0 auto;
@@ -103,7 +104,7 @@ body {
 
 }
 
-.line-Through{
+.line-through{
     text-decoration: line-through;
     color : var(--blue-light);
 }
