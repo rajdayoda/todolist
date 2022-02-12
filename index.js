@@ -95,6 +95,7 @@ document.addEventListener('keyup', function (event) {
             realizado : false,
             eliminado : false
         })
+        localStorage.setItem('LISTA',JSON.stringify(LIST))
         id++
         input.value = ''
         console.log(LIST)
