@@ -84,6 +84,11 @@ body {
 
 }
 
+.agregar-tarea input::placeholder {
+    font-size: 1.1rem;
+    color: var(--purple);
+ }
+
 /*///seccion de tarea////*/
 
 .seccion-tarea h3 {
@@ -104,6 +109,17 @@ body {
 
 }
 
+.seccion-tarea > ul p {
+    font-size: 1.2rem;
+}
+.seccion-tarea i {
+    font-size: 20px;
+}
+
+.seccion-tarea i:hover {
+    color: var(--blue-light);
+    cursor: pointer;
+}
 .line-through{
     text-decoration: line-through;
     color : var(--blue-light);
