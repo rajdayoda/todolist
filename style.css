@@ -171,7 +171,7 @@ body {
 
 #fecha {
     color: var(--white);
-    /* padding: 50px 0 5px 0px; */
+    padding: 50px 0 5px 0px;
 
 }
 
@@ -232,14 +232,28 @@ body {
     border-radius: 15px;
     padding: 10px;
     color: var(--white);
+    margin: 5px 0;
 
 }
 .seccion-tarea i {
     font-size: 25px;
 }
 
+.seccion-tarea > ul p {
+    font-size: 1.2rem;
+
+}
 
 
+.seccion-tarea i:hover {
+    color: var(--blue-light);
+    cursor: pointer;
+}
+
+.line-through{
+    text-decoration: line-through;
+    color : var(--blue-light);
+} 
 
 
 

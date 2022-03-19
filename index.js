@@ -6,9 +6,9 @@ const botonEnter = document.querySelector('#boton-enter')
 const check = 'fa-check-circle'
 const uncheck = 'fa-circle'
 const lineThrough = 'line-through'
-const LIST =[]
+let LIST
 
-let id = 0 // para que inicie en 0 cada tarea tendra un id diferente
+let id // para que inicie en 0 cada tarea tendra un id diferente
 
 //creacion de fecha actualizada 
 
@@ -78,6 +78,7 @@ botonEnter.addEventListener('click', ()=> {
             realizado : false,
             eliminado : false
         })
+        localStorage.setItem('TODO',JSON.stringify(LIST))
         id++
         input.value = ''
     }
@@ -95,9 +96,10 @@ document.addEventListener('keyup', function (event) {
             realizado : false,
             eliminado : false
         })
-        localStorage.setItem('LISTA',JSON.stringify(LIST))
-        id++
+        localStorage.setItem('TODO',JSON.stringify(LIST))
+     
         input.value = ''
+        id++
         console.log(LIST)
         }
     }
@@ -108,11 +110,35 @@ document.addEventListener('keyup', function (event) {
 lista.addEventListener('click',function(event){
     const element = event.target 
     const elementData = element.attributes.data.value
+    console.log(elementData)
     
     if(elementData == 'realizado') {
         tareaRealizada(element)
     }
     else if(elementData == 'eliminado') {
         tareaEliminada(element)
+        console.log("elimnado")
     }
+    localStorage.setItem('TODO',JSON.stringify(LIST))
 })
+
+
+
+
+let data = localStorage.getItem('TODO')
+if(data){
+    LIST = JSON.parse(data)
+    console.log(LIST)
+    id = LIST.length
+    cargarLista(LIST)
+}else {
+    LIST = []
+    id = 0
+}
+
+
+function cargarLista(array) {
+    array.forEach(function(item){
+        agregarTarea(item.nombre,item.id,item.realizado,item.eliminado)
+    })
+}
